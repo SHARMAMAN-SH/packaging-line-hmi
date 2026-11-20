@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Packaging Line HMI</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/hmi.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="width masthead"><strong>PKG-01</strong><span>Nonwovens packaging</span><span class="simulation">SIMULATION</span></div>
+  </header>
+  <main class="width">
+    <div class="overview">
+      <h1>Packaging line</h1>
+      <span id="link" class="connection" data-live="false">OPC UA offline</span>
+    </div>
+    <div class="status" id="status" data-state="Offline" role="status">
+      <strong id="state">Offline</strong>
+      <span id="message">Waiting for the OPC UA simulator.</span>
+    </div>
+    <section class="process" aria-label="Process overview">
+      <div><span>01 / Infeed conveyor</span><strong id="conveyor">Unavailable</strong></div>
+      <div><span>02 / Pack throughput</span><strong id="speed">&mdash;</strong><small>packs/min</small></div>
+      <div><span>03 / Discharge</span><strong id="discharge">Unavailable</strong></div>
+      <div><span>Pack count</span><strong id="count">&mdash;</strong><small>packs</small></div>
+    </section>
+    <section class="trend" aria-labelledby="trend-title">
+      <div class="section-heading"><h2 id="trend-title">Throughput trend</h2><span>Last 60 s / packs per minute</span></div>
+      <div class="chart"><div class="scale" aria-hidden="true"><span>80</span><span>40</span><span>0</span></div>
+        <canvas id="trend" width="840" height="114" role="img" aria-label="Trend of valid throughput readings"></canvas></div>
+      <div class="axis" aria-hidden="true"><span>60 s ago</span><span>Now</span></div>
+    </section>
+    <section aria-labelledby="tag-title">
+      <div class="section-heading"><h2 id="tag-title">Tag diagnostics</h2><span>OPC UA / source time in UTC</span></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th scope="col">Tag</th><th scope="col">Value</th><th scope="col">OPC status</th><th scope="col">Source time</th></tr></thead>
+        <tbody id="tags"></tbody>
+      </table></div>
+    </section>
+  </main>
+</body>
+</html>
