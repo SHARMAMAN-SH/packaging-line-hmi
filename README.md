@@ -1,6 +1,6 @@
 # Packaging Line HMI and OPC UA Diagnostics
 
-An AI-assisted portfolio project for practicing C# HMI development and OPC UA troubleshooting on a simulated nonwovens packaging station. The Python simulator publishes four tags over OPC UA. The read-only HMI shows line state, pack count, throughput, and tag diagnostics so an operator can distinguish a machine stoppage from an unreliable sensor reading.
+A C# operator dashboard for a simulated nonwovens packaging line. The Python simulator publishes four tags over OPC UA, and the read-only HMI displays line state, pack count, throughput, and tag quality. The demo shows how to distinguish a conveyor jam from a sensor fault or a lost connection.
 
 ```mermaid
 flowchart LR
